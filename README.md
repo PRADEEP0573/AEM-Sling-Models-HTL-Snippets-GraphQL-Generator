@@ -106,7 +106,7 @@ Contributions are welcome! If you have suggestions, issues, or ideas, feel free 
 
 ## 📄 License
 
-This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** – see the [LICENSE](https://github.com/PRADEEP0573/AEM-Sling-Models-HTL-Snippets-GraphQL-Generator/blob/main/LICENSE) file for details.
 
 ---
 
