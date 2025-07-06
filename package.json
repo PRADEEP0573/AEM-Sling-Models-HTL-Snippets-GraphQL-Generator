@@ -1,0 +1,132 @@
+{
+    "name": "aem-sling-model-generator",
+    "displayName": "AEM Sling Models + HTL Snippets + GraphQL Generator",
+    "description": "Supercharge your Adobe Experience Manager development with powerful code generation for Sling Models, HTL snippets, and GraphQL types. Accelerate component development with intelligent templates, reduce boilerplate code, and follow best practices with just a few clicks. Perfect for AEM developers looking to streamline their workflow.",
+    "version": "1.0.0",
+    "publisher": "padde-software",
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.101.0"
+    },
+    "author": "Pradeep Sapparapu",
+    "galleryBanner": {
+        "color": "#007acc",
+        "theme": "dark"},
+        
+    "icon": "images/icon.png",    
+    "categories": [
+        "Programming Languages",
+        "Snippets",
+        "Other"
+    ],
+    "extensionPack": [
+        "TheSebastianWest.vscode-htl",
+        "GraphQL.vscode-graphql",
+        "GraphQL.vscode-graphql-syntax"
+    ],
+    "keywords": [
+        "AEM",
+        "Adobe Experience Manager",
+        "HTL",
+        "Sightly",
+        "Sling",
+        "GraphQL",
+        "SPA",
+        "JCR",
+        "CRX",
+        "CMS",
+        "Component",
+        "Java",
+        "Maven",
+        "OSGi",
+        "AEM Developer",
+        "AEM Tools",
+        "AEM Extension",
+        "AEM Components",
+        "AEM Snippets",
+        "Adobe",
+        "Headless CMS",
+        "Content Management",
+        "VS Code Extension"
+    ],
+    "activationEvents": [
+        "onCommand:extension.generateSlingModel",
+        "onCommand:extension.generateGraphQLModel",
+        "onLanguage:html",
+        "onLanguage:htl"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.generateSlingModel",
+                "title": "Generate Sling Model",
+                "category": "AEM"
+            },
+            {
+                "command": "extension.generateGraphQLModel",
+                "title": "Generate GraphQL Model",
+                "category": "AEM"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "extension.generateSlingModel",
+                    "group": "AEM",
+                    "when": "explorerResourceIsFolder"
+                },
+                {
+                    "command": "extension.generateGraphQLModel",
+                    "group": "AEM",
+                    "when": "explorerResourceIsFolder"
+                }
+            ]
+        },
+        "configuration": {
+            "title": "AEM Development",
+            "properties": {
+                "aem.htl.validation.enabled": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable/disable HTL validation"
+                },
+                "aem.sling.defaultPackage": {
+                    "type": "string",
+                    "default": "com.adobe.aem.guides.wknd.core.models",
+                    "description": "Default Java package for Sling Models"
+                },
+                "aem.graphql.endpoint": {
+                    "type": "string",
+                    "default": "/content/_cq_graphql/endpoint.json",
+                    "description": "Default GraphQL endpoint"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "@types/node": "^18.16.19",
+        "@types/vscode": "^1.101.0",
+        "eslint": "^8.44.0",
+        "typescript": "^4.9.5"
+    },
+    "dependencies": {
+        "chokidar": "^3.5.3",
+        "fs-extra": "^11.1.1",
+        "graphql": "^16.8.1",
+        "graphql-request": "^7.2.0",
+        "graphql-tag": "^2.12.6",
+        "prettier": "^3.0.0",
+        "replace-in-file": "^6.3.5",
+        "vscode-uri": "^3.0.7"
+    },
+        "repository": {
+        "type": "git",
+        "url": "https://github.com/PRADEEP0573/AEM-Component-Clientlib-Generator"
+    }
+
+}
